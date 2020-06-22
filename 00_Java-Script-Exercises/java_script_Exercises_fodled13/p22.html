@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f00;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f00;
+            animation: 動畫名稱 播放時間 延遲播放的時間 速度 次數 方向 填充模式 播放狀態;
+            animation: chochola 2s infinite alternate;
+
+        }
+
+        @keyframes chochola{
+            0%{ border-radius: 50%;}
+            100%{ border-radius: 0%;}
+
+        }
+
+    </style>
+    
+</head>
+<body>
+
+
+    <div class="box"></div>
+    <div class="box1"></div>
+
+    
+</body>
+</html>
