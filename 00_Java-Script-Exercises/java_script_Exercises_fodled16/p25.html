@@ -12,34 +12,36 @@
             padding: 0;
             list-style: none;
         }
-        #menu_control{
+
+        #menu_control {
             position: absolute;
-            z-index: -2
+            z-index: -2;
             /* z-index: -2; 為什麼-2的時候是點右邊 沒有opacity, -2的時候是左邊  */
             opacity: 0;
 
         }
-        .header{
+
+        .header {
             height: 50px;
             background-color: #ccc;
             position: relative;
         }
 
-        .logo{
+        .logo {
             widows: 60px;
             height: 40px;
             margin-left: 10px;
         }
 
-        .logo img{
-            vertical-align: top ;
+        .logo img {
+            vertical-align: top;
         }
 
-        .logo img{
+        .logo img {
             display: block;
         }
 
-        .menu_btn{
+        .menu_btn {
             width: 40px;
             height: 40px;
             background-color: #000;
@@ -49,14 +51,15 @@
             right: 10px;
         }
 
-        .menu_btn span{
+        .menu_btn span {
             opacity: 0;
             width: 1px;
             height: 1px;
             display: block;
             overflow: hidden;
         }
-        .menu_btn::before{
+
+        .menu_btn::before {
             content: '';
             position: absolute;
             height: 2px;
@@ -67,10 +70,10 @@
             bottom: 0;
             margin: auto;
             box-shadow: 0px 8px 0px #aaa,
-                        0px -8px 0px #aaa;
+                0px -8px 0px #aaa;
         }
 
-        nav a{
+        nav a {
             display: block;
             text-decoration: none;
             color: #a6e22c;
@@ -78,34 +81,38 @@
             border-bottom: 1px solid #a6e22c;
         }
 
-        #menu_control:checked ~ .header nav{
+        #menu_control:checked~.header nav {
             Left: 0;
         }
-        
-        @media screen and (max-width: 767px){
-            nav{
-            width: 80%;
-            height: calc(100vh - 50px);
-            background-color: #282924;
-            position: absolute;
-            top: 50px;
-            left: -100%;
-        }
+
+        @media screen and (max-width: 767px) {
+            nav {
+                width: 80%;
+                height: calc(100vh - 50px);
+                background-color: #282924;
+                position: absolute;
+                top: 50px;
+                left: -100%;
+            }
         }
 
-        @media screen and (min-width:768px){
-            .menu_btn{ display: none}
-            .header{
+        @media screen and (min-width:768px) {
+            .menu_btn {
+                display: none
+            }
+
+            .header {
                 display: flex;
                 justify-content: space-between;
                 background-color: #292923;
                 align-items: center;
             }
 
-            .logo{
-
+            .logo {
+                vertical-align: middle;
             }
-            nav{
+
+            nav {
                 position: relative;
                 left: 0;
                 display: flex;
@@ -114,7 +121,8 @@
                 top: 0;
                 background-color: transparent;
             }
-            nav a{
+
+            nav a {
                 border-bottom: none;
             }
         }

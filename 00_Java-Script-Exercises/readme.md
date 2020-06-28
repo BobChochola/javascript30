@@ -201,7 +201,7 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 5. (min-width: 768px) 最小的 再小就不行！！！ >=768
 
 ## **閱讀內容** 'RWD入門' 
-**內容對照 Exercises_style_15 p23**
+**內容對照 Exercises_style_15 p24**
 鐵人賽AMOS鐵人賽第二十一天(https://ithelp.ithome.com.tw/articles/10206535)
 1. 各種裝置的網頁寬度要怎麼設定
 2. 製做RWD時會遇到的問題
@@ -211,7 +211,7 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 6. `故意把它弄壞`: 讓lorem的文字不對齊 -> 在設定width 讓他很大就可以解決
 
 ## **閱讀內容** 'RWD入門' 
-**內容對照 Exercises_style_16 p24**
+**內容對照 Exercises_style_16 p25**
 鐵人賽AMOS鐵人賽第二十二天(https://ithelp.ithome.com.tw/articles/10206537)
 1. 為什麼手機會很耗電 -> 因為網站寫的不好
 2. 先寫手機版型-> 再寫桌機 : 避免複寫
@@ -223,3 +223,38 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 8. z-index
 9. justify-content: space-between: 分散在做又兩側
 10. 最後可以去統整 手機 桌機相同的部分 在用@media 去設定 max-width:767px 最大767 以下都是手機
+
+## **閱讀內容** 'boostrap寫 RWD' 
+**內容對照 Exercises_style_17 p26**
+鐵人賽AMOS鐵人賽第二十四天(https://ithelp.ithome.com.tw/articles/10206538)
+使用boostrap:[https://getbootstrap.com/]
+
+1. get started >> starter template >>copy code
+
+2. {預設 .col-2
+手機 直 .col -> .col-佔欄數
+手機 橫 .col-sm  -> .col-sm-佔欄數
+
+平板 直 .col-md -> .col-md-佔欄數
+平板 橫 .col-lg -> .col-lg-佔欄數
+
+桌機 .col-xl -> .col-xl-佔欄數}
+3. 為什麼去mobile圖片沒有滿版 >> 去檢查css style >> 發現是 max-width: 100%
+4. what's max-width:100%
+5. 改成 width: 100% 解決
+
+## **閱讀內容** 'boostrap寫 RWD' 
+**內容對照 Exercises_style_18 p27**
+鐵人賽AMOS鐵人賽第二十四天(https://ithelp.ithome.com.tw/articles/10206538)
+使用boostrap:[https://getbootstrap.com/]
+1. get started >> starter template >>copy code
+2. get started >> left sidebar (components -> navbar) >> copy code
+3. left sidebar (components -> Jumbotron) >> copy code 背景圖
+4. background: url() `no-repeat` center center / cover; 可以去試試看repeat長怎樣
+5. left sidebar (components -> Breadcrumb) >> copy third code
+6. left sidebar (components -> pagination) >> copy code
+7. 在class 後面加`justify-content-center` 在boostrap4 可以直接改動
+8. Q: 為什麼加了 .container 之後會跑版 ?
+9. 幻燈片 (components -> pagination) >> copy third code ->要加字的話 要在`carousel-item`後面加 [<div class="carousel-caption d-none d-md-block">]
+10. 彈跳出來的視窗(components -> Modal) >> copy code -> 需要給他一個id去控制, 所以需要額外加`type="button" class="btn btn-primary" data-toggle="modal" data-target=""`
+可以發現裡面有一個 data-target,必須先給跳出來的東西一個id之後, 用data-target 去定錨 放在href裡面加入id.
