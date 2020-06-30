@@ -2,156 +2,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-        #menu_control {
-            position: absolute;
-            z-index: -2;
-            /* z-index: -2; 為什麼-2的時候是點右邊 沒有opacity, -2的時候是左邊  */
-            opacity: 0;
+    #menu_control {
+      position: absolute;
+      z-index: -2;
+      /* z-index: -2; 為什麼-2的時候是點右邊 沒有opacity, -2的時候是左邊  */
+      opacity: 0;
 
-        }
+    }
 
-        .header {
-            height: 50px;
-            background-color: #ccc;
-            position: relative;
-        }
+    .header {
+      height: 50px;
+      background-color: #ccc;
+      position: relative;
+    }
 
-        .logo {
-            widows: 60px;
-            height: 40px;
-            margin-left: 10px;
-        }
+    .logo {
+      widows: 60px;
+      height: 40px;
+      margin-left: 10px;
+    }
 
-        .logo img {
-            vertical-align: top;
-        }
+    .logo img {
+      vertical-align: top;
+    }
 
-        .logo img {
-            display: block;
-        }
+    .logo img {
+      display: block;
+    }
 
-        .menu_btn {
-            width: 40px;
-            height: 40px;
-            background-color: #000;
-            display: block;
-            position: absolute;
-            top: 5px;
-            right: 10px;
-        }
+    .menu_btn {
+      width: 40px;
+      height: 40px;
+      background-color: #000;
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
 
-        .menu_btn span {
-            opacity: 0;
-            width: 1px;
-            height: 1px;
-            display: block;
-            overflow: hidden;
-        }
+    .menu_btn span {
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      display: block;
+      overflow: hidden;
+    }
 
-        .menu_btn::before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            left: 2px;
-            width: 36px;
-            background-color: #aaa;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            box-shadow: 0px 8px 0px #aaa,
-                0px -8px 0px #aaa;
-        }
+    .menu_btn::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      left: 2px;
+      width: 36px;
+      background-color: #aaa;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      box-shadow: 0px 8px 0px #aaa,
+        0px -8px 0px #aaa;
+    }
 
-        nav a {
-            display: block;
-            text-decoration: none;
-            color: #a6e22c;
-            padding: 10px 20px;
-            border-bottom: 1px solid #a6e22c;
-        }
+    nav a {
+      display: block;
+      text-decoration: none;
+      color: #a6e22c;
+      padding: 10px 20px;
+      border-bottom: 1px solid #a6e22c;
+    }
 
-        #menu_control:checked~.header nav {
-            Left: 0;
-        }
+    #menu_control:checked~.header nav {
+      Left: 0;
+    }
 
-        @media screen and (max-width: 767px) {
-            nav {
-                width: 80%;
-                height: calc(100vh - 50px);
-                background-color: #282924;
-                position: absolute;
-                top: 50px;
-                left: -100%;
-            }
-        }
+    @media screen and (max-width: 767px) {
+      nav {
+        width: 80%;
+        height: calc(100vh - 50px);
+        background-color: #282924;
+        position: absolute;
+        top: 50px;
+        left: -100%;
+      }
+    }
 
-        @media screen and (min-width:768px) {
-            .menu_btn {
-                display: none
-            }
+    @media screen and (min-width:768px) {
+      .menu_btn {
+        display: none
+      }
 
-            .header {
-                display: flex;
-                justify-content: space-between;
-                background-color: #292923;
-                align-items: center;
-            }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #292923;
+        align-items: center;
+      }
 
-            .logo {
-                vertical-align: middle;
-            }
+      .logo {
+        vertical-align: middle;
+      }
 
-            nav {
-                position: relative;
-                left: 0;
-                display: flex;
-                width: auto;
-                height: auto;
-                top: 0;
-                background-color: transparent;
-            }
+      nav {
+        position: relative;
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        top: 0;
+        background-color: transparent;
+      }
 
-            nav a {
-                border-bottom: none;
-            }
-        }
-    </style>
+      nav a {
+        border-bottom: none;
+      }
+    }
+  </style>
 
 
 </head>
 
 <body>
 
-    <input type="checkbox" name="" id="menu_control">
-    <div class="header">
-        <h1 class="logo">
-            <a href="#">
-                <img src="https://picsum.photos/60/40?random=1" alt="">
-            </a>
-        </h1>
-        <label for="menu_control" class="menu_btn">
-            <span>dropdown</span>
-        </label>
-        <nav>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-        </nav>
-    </div>
+  <input type="checkbox" name="" id="menu_control">
+  <div class="header">
+    <h1 class="logo">
+      <a href="#">
+        <img src="https://picsum.photos/60/40?random=1" alt="">
+      </a>
+    </h1>
+    <label for="menu_control" class="menu_btn">
+      <span>dropdown</span>
+    </label>
+    <nav>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+    </nav>
+  </div>
 
 
 

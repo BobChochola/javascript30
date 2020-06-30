@@ -258,3 +258,12 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 9. 幻燈片 (components -> pagination) >> copy third code ->要加字的話 要在`carousel-item`後面加 [<div class="carousel-caption d-none d-md-block">]
 10. 彈跳出來的視窗(components -> Modal) >> copy code -> 需要給他一個id去控制, 所以需要額外加`type="button" class="btn btn-primary" data-toggle="modal" data-target=""`
 可以發現裡面有一個 data-target,必須先給跳出來的東西一個id之後, 用data-target 去定錨 放在href裡面加入id.
+
+## **閱讀內容** 'JQuery入門' 
+**內容對照 Exercises_style_18 p27**
+鐵人賽AMOS鐵人賽第二十六天(https://ithelp.ithome.com.tw/articles/10206540)
+使用jqurey:[https://jquery.com/]
+使用google developer cdn [https://developers.google.com/speed/libraries#jquery]
+1. `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>` 放在body 結束前
+2. 存取 jquery.min.js 內容 通常用js folder 建立名字 -> import `<script src="js/jquery.min.js"></script>`
+3. $(document).ready 要做的事情
