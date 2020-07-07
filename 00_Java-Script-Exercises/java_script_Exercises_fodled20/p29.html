@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-a {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: #aaa;
+
+        }
+
+        .box-b {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: #faa;
+        }
+
+        .product-title {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box-a">box-a</div>
+    <div class="box-b">box-b</div>
+
+    <div class="product-title">產品介紹</div>
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium esse praesentium quibusdam? Maiores tempore
+        neque quaerat facilis porro. Reprehenderit quas exercitationem libero aliquid eum quisquam optio excepturi quos
+        fuga voluptas.
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // test1
+            $(".box-a").dblclick(function () {
+                $(".box-b").toggle();
+            })
+
+        // demo1
+        $('.product-title').click(function () {
+            $('.content').toggle();
+        })
+
+    })
+    </script>
+
+
+</body>
+
+</html>

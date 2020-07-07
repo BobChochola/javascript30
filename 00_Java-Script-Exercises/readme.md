@@ -267,3 +267,21 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 1. `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>` 放在body 結束前
 2. 存取 jquery.min.js 內容 通常用js folder 建立名字 -> import `<script src="js/jquery.min.js"></script>`
 3. $(document).ready 要做的事情
+
+## **閱讀內容** 'JQuery事件' 
+**內容對照 Exercises_style_18 p27**
+鐵人賽AMOS鐵人賽第二十七天(https://ithelp.ithome.com.tw/articles/10206541)
+使用jqurey:[https://jquery.com/]
+
+1. ```$(document).ready(function () {
+            $(".box-a").click(function(){
+                $(".box-b").hide();
+            })
+        })
+    ```
+    在點擊box-a 後 box-b收起來
+2. .toggle() 就跟開關一樣 可以去判斷 開或關 收起來 彈出來
+3. .dblclick() 點兩下 才動作
+4. cursor: pointer 會變手指頭唷
+5. background-color: rgba(0,0,0,.5); 透明
+6. p29-1 用jqurey做 蓋版廣告
