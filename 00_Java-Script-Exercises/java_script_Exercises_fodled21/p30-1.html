@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .controller {
+        display: block;
+        padding: 6px 10px;
+        background-color: #000;
+        color: #fff;
+        width: 300px;
+        text-decoration: none;
+    }
+
+    .text {
+        width: 280px;
+        padding: 20px;
+        background-color: #ccc;
+
+
+    }
+
+    .text.close {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <a href="#" class="controller controller1">ON/OFF</a>
+    <div class="text text1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, porro blanditiis sed vitae quidem
+        reprehenderit veniam adipisci dolore placeat dignissimos quibusdam sint, necessitatibus illo at architecto,
+        alias obcaecati doloribus consequuntur?</div>
+
+    <a href="#" class="controller controller2">ON/OFF</a>
+    <div class="text text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, porro blanditiis sed vitae quidem
+        reprehenderit veniam adipisci dolore placeat dignissimos quibusdam sint, necessitatibus illo at architecto,
+        alias obcaecati doloribus consequuntur?</div>
+
+    
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.controller1').click(function () {
+                $('.text1').toggleClass('close');
+            })
+
+            $('.controller2').click(function () {
+                $('.text2').toggleClass('close');
+            })
+        })
+    </script>
+</body>
+
+</html>

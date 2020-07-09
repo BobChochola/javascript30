@@ -260,7 +260,7 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 可以發現裡面有一個 data-target,必須先給跳出來的東西一個id之後, 用data-target 去定錨 放在href裡面加入id.
 
 ## **閱讀內容** 'JQuery入門' 
-**內容對照 Exercises_style_18 p27**
+**內容對照 Exercises_style_19 p28**
 鐵人賽AMOS鐵人賽第二十六天(https://ithelp.ithome.com.tw/articles/10206540)
 使用jqurey:[https://jquery.com/]
 使用google developer cdn [https://developers.google.com/speed/libraries#jquery]
@@ -269,7 +269,7 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 3. $(document).ready 要做的事情
 
 ## **閱讀內容** 'JQuery事件' 
-**內容對照 Exercises_style_18 p27**
+**內容對照 Exercises_style_20 p29**
 鐵人賽AMOS鐵人賽第二十七天(https://ithelp.ithome.com.tw/articles/10206541)
 使用jqurey:[https://jquery.com/]
 
@@ -285,3 +285,17 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 4. cursor: pointer 會變手指頭唷
 5. background-color: rgba(0,0,0,.5); 透明
 6. p29-1 用jqurey做 蓋版廣告
+
+
+## **閱讀內容** 'JQuery事件' 
+**內容對照 Exercises_style_21 p30練習 p30-1一顆按鈕開跟關**
+網頁色彩: [http://csscoke.com/2015/01/01/rgb-hsl-hex/]
+鐵人賽AMOS鐵人賽第二十七天(https://ithelp.ithome.com.tw/articles/10206541)
+使用jqurey: [https://jquery.com/]
+
+1. 接續p29 `$('.full-screen').addClass('close');` : addClass('不用 !.!')
+2. 給addClass('__') 一個 css { display:none;}
+3. 在點了 btn-open 之後會發現 `removerClass('close')` 所以又回到原點
+------------------------------------------------------------
+4. toggleClass() 自動檢查有沒有這格class 如果沒有就幫你補上 如果有就幫你拿掉
+5. 如果有兩個需要控制的 建議還是使用變數去控制 還是可以用controller1 controller2 去做簡單的控制 
