@@ -299,3 +299,15 @@ css.reset: [https://meyerweb.com/eric/tools/css/reset/]
 ------------------------------------------------------------
 4. toggleClass() 自動檢查有沒有這格class 如果沒有就幫你補上 如果有就幫你拿掉
 5. 如果有兩個需要控制的 建議還是使用變數去控制 還是可以用controller1 controller2 去做簡單的控制 
+
+
+## **閱讀內容** 'JQuery動畫' 
+**內容對照 Exercises_style_22 p31練習 
+鐵人賽AMOS鐵人賽第二十八天(https://ithelp.ithome.com.tw/articles/10206543)
+使用jqurey: [https://jquery.com/]
+
+1. jQurey -> fadein, fadeout, fading
+2. slideToggle() 他會判斷 他是有展開還是沒有展開
+3. fadeToggle() 兩個一樣功能 可以比較看看animation
+4. slideDown(), fadeIn() 只能開不能關
+5. 用 p29-1.html's code -> 使用fadeOut() 可以發現他是 慢慢改變透明度 最後消失
