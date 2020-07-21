@@ -10,10 +10,19 @@
 [[DEMO]](https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-BobChochola.html)
 
 ## **學習過程**
-#### Step1. add some basic code
+#### Step 1. add some basic code
 參考 [[gau github]](https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/)
 1. copy `style.cc`
 2. copy `index-STARY`
 3. copy `sounds file`
-#### Step2. 學習裡面所會用到的html, css,基本語法
-div.
+#### Step 2. start search question
+
+```
+###### why use data-* in html
+The data-* attribute is used to store custom data private to the page or application.
+
+The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
+
+The stored (custom) data can then be used in the page's JavaScript to create a more engaging user experience (without any Ajax calls or server-side database queries).
+```
+
