@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 500px;
+        }
+
+        .container div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            color: #dd1;
+        }
+
+        .percentage {
+            background-color: black;
+            width: 50%;
+            height: 50%;
+        }
+
+        .view-point {
+            background-color: #3A006F;
+            width: 50vw;
+            height: 50vh;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <h1 class="js-current-view-width"></h1>
+    <h2>父層容器固定式 500px, 百分比吃父層容器, view point 吃螢幕寬度</h2>
+    <div class="container">
+        <div class="percentage"></div>
+        <div class="view-point"></div>
+    </div>
+
+    <!-- js -->
+    <script>
+        const setCurrentWidthText = () => {
+            document.querySelector('.js-current-view-width').textContent = `現在螢幕:${document.body.clientWidth}px`;
+            const percentageElement = document.querySelector('.percentage');
+            const percentageElementH = document.querySelector('.percentage');
+            const viewPointElement = document.querySelector('.view-point');
+            const viewPointElementH = document.querySelector('.view-point');
+
+            percentageElement.textContent = `width: 50% = ${percentageElement.offsetWidth}px`;
+            percentageElementH.textContent = `height: 50% = ${percentageElementH.offsetHeight}px`;
+            viewPointElement.textContent = `width: 50vw = ${viewPointElement.offsetWidth}px`;
+            viewPointElementH.textContent = `height 50vh = ${viewPointElementH.offsetHeight}px`;
+        }
+
+        window.addEventListener('resize', () => setCurrentWidthText())
+        setCurrentWidthText();
+    </script>
+
+</body>
+
+</html>

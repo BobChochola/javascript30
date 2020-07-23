@@ -2,10 +2,13 @@ html{
     background-image: url('https://i.imgur.com/b9r5sEL.jpg') repeat 0 0;
 }
 
-.keys{
+div.keys{
     display: flex;
-    text-align: center;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
     justify-content: center;
+    
 }
 
 .key{
