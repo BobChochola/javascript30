@@ -50,14 +50,10 @@
         const setCurrentWidthText = () => {
             document.querySelector('.js-current-view-width').textContent = `現在螢幕:${document.body.clientWidth}px`;
             const percentageElement = document.querySelector('.percentage');
-            const percentageElementH = document.querySelector('.percentage');
             const viewPointElement = document.querySelector('.view-point');
-            const viewPointElementH = document.querySelector('.view-point');
 
-            percentageElement.textContent = `width: 50% = ${percentageElement.offsetWidth}px`;
-            percentageElementH.textContent = `height: 50% = ${percentageElementH.offsetHeight}px`;
-            viewPointElement.textContent = `width: 50vw = ${viewPointElement.offsetWidth}px`;
-            viewPointElementH.textContent = `height 50vh = ${viewPointElementH.offsetHeight}px`;
+            percentageElement.textContent = `width: 50% = ${percentageElement.offsetWidth}px, height 50% = ${percentageElement.offsetHeight}px`;
+            viewPointElement.textContent = `width: 50vw = ${viewPointElement.offsetWidth}px, height 50vh = ${viewPointElement.offsetHeight}px`;
         }
 
         window.addEventListener('resize', () => setCurrentWidthText())
