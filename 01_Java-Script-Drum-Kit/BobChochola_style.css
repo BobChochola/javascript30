@@ -1,28 +1,27 @@
-html{
+html {
     background-image: url('https://i.imgur.com/b9r5sEL.jpg')
 }
 
 body.html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
-div.keys{
+div.keys {
     display: flex;
     flex: 1;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    text-transfrom: uppercase;
-    
+    text-transform: uppercase;
 }
 
-.key{
+.key {
     padding: 30px 30px;
     margin: auto;
     font-size: 10px;
-    width: 60px;
+    width: 80px;
     border: 4px solid black;
     transition: all .07s ease;
     border-radius: 10px 10px 10px 10px;
@@ -33,10 +32,16 @@ div.keys{
 }
 
 kbd {
-  display: block;
-  font-size: 40px;
+    display: block;
+    font-size: 40px;
 }
 
-.sound{
-      font-size: 20px;
+.playing {
+    transform: scale(1, 1);
+    border-color: #FFc600;
+    box-shadow: 0 0 50px #FFc900;
+}
+
+.sound {
+    font-size: 10px;
 }
