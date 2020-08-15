@@ -6,7 +6,7 @@
 ## **主題**
 用JS與CSS搭配製作一個實時的時鐘效果。  
 [[BLOG]](https://github.com/BobChochola/javascript30)  
-[[DEMO]](https://github.com/BobChochola/javascript30/tree/master/02_Java_script_CSS_with_JS_Clock)
+[[DEMO]](https://github.com/BobChochola/javascript30/blob/master/02_Java_script_CSS_with_JS_Clock/Demo_CSS_with_JS_Clock.png)
 
 
 ## **步驟**
