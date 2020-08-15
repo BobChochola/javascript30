@@ -19,8 +19,35 @@
     </div>
 
     <script>
-    </script>
+        // (function() {
+        const hand_hours = document.querySelector('.hours-hands');
+        const hand_minute = document.querySelector('.minute-hands');
+        const hand_second = document.querySelector('.second-hands');
 
+
+        function setClock() {
+            const nowDate = new Date();
+            let secondDeg = (nowDate.getSeconds() / 60) * 360;
+            let minuteDeg = (nowDate.getMinutes() / 60) * 360;
+            let hoursDeg = (nowDate.getHours() / 12) * 360;
+            hand_second.style.transform = `rotate(${secondDeg}Deg)`;
+            hand_minute.style.transform = `rotate(${minuteDeg}Deg)`;
+            hand_hours.style.transform = `rotate(${hoursDeg}Deg)`;
+
+        }
+        setClock();
+
+        setInterval(setClock, 1000);
+
+
+        // for IIFE
+        // setInterval(function() {
+        //     setClock();
+        // }, 1000);
+
+
+        // })();
+    </script>
 </body>
 
 </html>
