@@ -78,23 +78,23 @@
                 domkey.classList.add('playing');
             }
 
-            function removeTranstionend(e) {
-                if (e.propertyName === 'transform') {
-                    e.currentTarget.forEach(function(Item) {
-                        Item.classList.remove('playing');
-                    })
-                    console.log(e.currentTarget)
-                }
-            }
-
-            //使用這種方法會有bug 當連續click時, 因為e.propertyName沒有及時snyc會造成animation還留著, 要等到下一個事件發生一並清除
+            // 使用這種方法會有bug 當連續click時, 因為e.propertyName沒有及時snyc會造成animation還留著, 要等到下一個事件發生一並清除
             // function removeTranstionend(e) {
-            //     const transitionend = document.querySelectorAll('.playing');
             //     if (e.propertyName === 'transform') {
-            //         console.log(transitionend)
-            //         transitionend.forEach((item) => item.classList.remove('playing'));
+            //         e.currentTarget.forEach(function(Item) {
+            //             Item.classList.remove('playing');
+            //         })
+            //         console.log(e.currentTarget)
             //     }
             // }
+
+            function removeTranstionend(e) {
+                const transitionend = document.querySelectorAll('.playing');
+                if (transitionend) {
+                    console.log(transitionend)
+                    transitionend.forEach((item) => item.classList.remove('playing'));
+                }
+            }
 
             window.addEventListener('keydown', playHandle);
 
