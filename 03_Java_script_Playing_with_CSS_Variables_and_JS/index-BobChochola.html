@@ -72,6 +72,15 @@
                 }
             }
 
+
+            //三元運算子
+            // document.documentElement.style['--' + this.name] = this.value + (this.name === 'color' ? '' : 'px')
+            // document.documentElement.style.setProperty('--' + this.name, this.value + (this.name == color ? '' : 'px'))
+
+            // try try
+            // document.documentElement.style.setProperty('--' + this.name, this.value + (this.dataset.sizing || ''))
+
+
             inputs.forEach(function(input) {
                 input.addEventListener('change', changeHandle)
                 input.addEventListener('mousemove', changeHandle)
