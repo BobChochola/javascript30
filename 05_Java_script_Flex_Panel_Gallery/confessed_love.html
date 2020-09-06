@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="BobChochola.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Hey</p>
+            <p>Let's</p>
+            <P>Love</P>
+        </div>
+        <div class="panel panel2">
+            <p>Hey</p>
+            <p>TAKE</p>
+            <P>Love</P>
+        </div>
+        <div class="panel panel3">
+            <p>Hey</p>
+            <p>IT</p>
+            <P>Love</P>
+        </div>
+        <div class="panel panel4">
+            <p>Hey</p>
+            <p>ALL</p>
+            <P>Love</P>
+        </div>
+        <div class="panel panel5">
+            <p>Hey</p>
+            <p>IN</p>
+            <P>Love</P>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const panels = document.querySelectorAll('.panel');
+
+            function clickHandler() {
+                this.classList.toggle("open");
+            }
+
+            function transitionHandler(e) {
+                if (e.propertyName.includes('flex'))
+                    this.classList.toggle('open-active');
+            }
+
+            panels.forEach(panel => panel.addEventListener('click', clickHandler));
+            panels.forEach(panel => panel.addEventListener('transitionend', transitionHandler));
+        })();
+    </script>
+
+</body>
+
+</html>
