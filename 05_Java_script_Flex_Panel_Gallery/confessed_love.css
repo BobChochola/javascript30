@@ -1,9 +1,10 @@
 html {
     box-sizing: border-box;
-    background: #ffc600;
+    background: #bbbab6;
     font-family: 'helvetica neue';
     font-size: 20px;
     font-weight: 200;
+    opacity: 0.9;
 }
 
 body {
@@ -47,15 +48,15 @@ body {
 }
 
 .panel3 {
-    background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+    background-image: url(https://github.com/BobChochola/javascript30/blob/master/05_Java_script_Flex_Panel_Gallery/panle_image/panel_1.jpg?raw=true);
 }
 
 .panel4 {
-    background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+    background-image: url(https://github.com/BobChochola/javascript30/blob/master/05_Java_script_Flex_Panel_Gallery/panle_image/panel_4.jpg?raw=true);
 }
 
 .panel5 {
-    background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+    background-image: url(https://github.com/BobChochola/javascript30/blob/master/05_Java_script_Flex_Panel_Gallery/panle_image/panel_5.jpg?raw=true);
 }
 
 
@@ -93,12 +94,12 @@ body {
 
 .panel p {
     text-transform: uppercase;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic SC', 'cursive', 'cwTeXYen';
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
     font-size: 2em;
 }
 
 .panel.open {
     flex: 5;
-    font-size: 40px;
+    font-size: 18px;
 }
