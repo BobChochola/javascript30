@@ -5,6 +5,139 @@
 
 推薦flex學習小遊戲: flexboxfroggy ![] (https://flexboxfroggy.com/)
 
+level 1
+```css
+justify-content: flex-end
+```
+
+level 2
+```css
+justify-content: center
+```
+
+level 3
+```css
+justify-content: space-around
+```
+
+level 4
+```css
+justify-content: space-between
+```
+
+level 5
+```css
+align-items: flex-end;
+```
+
+level 6
+```css
+align-items: center;
+justify-content: center;
+```
+
+level 7
+```css
+justify-content: space-around;
+align-items: flex-end
+```
+
+level 8
+```css
+flex-direction: row-reverse;
+```
+
+level 9
+```css
+flex-direction: column
+```
+
+level 10
+```css
+justify-content: flex-end;
+flex-direction: row-reverse;
+```
+
+level 11
+```css
+flex-direction: column;
+justify-content: flex-end;
+```
+
+level 12
+```css
+flex-direction: column-reverse;
+justify-content: space-between;
+```
+
+level 13
+```css
+flex-direction: column-reverse;
+justify-content: space-between;
+```
+
+level 14
+```css
+order :1
+```
+
+level 15
+```css
+order: -3
+```
+
+level 16
+```css
+align-self: flex-end;
+```
+
+level 17
+```css
+order: 1;
+align-self: flex-end;
+```
+
+level 18
+```css
+flex-wrap: wrap;
+```
+
+level 19
+```css
+flex-direction: column-reverse;
+flex-wrap: wrap;
+```
+
+level 20
+```css
+flex-flow: column wrap;
+```
+
+level 21
+```css
+align-content: flex-start
+```
+
+level 22
+```css
+align-content: flex-end
+```
+
+level 23
+```css
+flex-direction : column-reverse;
+align-content: center
+```
+
+level 23
+```css
+flex-wrap: wrap-reverse;
+justify-content: center;
+flex-direction: column-reverse;
+align-content: space-between;
+```
+
+
 ## **主題**
 用CSS與JS來製作一個點擊後會動畫展開的圖片展示效果，  
 運用到了CSS的flex、transform、transition.. 這篇比較偏向css知識！  
