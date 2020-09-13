@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" class="secach-form">
+        <input type="text" class="serach" placeholder="City or State">
+        <ul class="suggestclass">
+            <li>Filter for a city</li>
+            <li>or a state</li>
+        </ul>
+    </form>
+
+
+    <script>
+        const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+        function requestHandler() {
+            consloe.log(JSON.parse(this.response));
+        }
+
+
+        let req = new XMLHttpRequest();
+
+        // req.addEvenetListenter = ('load', requestHandler);
+        // req.open("get", endpoint);
+        // req.send();
+
+        // fetch(endpoint)
+        //     .then(blob => blob.json())
+        //     .then(data => console.log(data));
+
+
+        // const cities = [];
+        // fetch(endpoint)
+        //     .then(blob => blob.json())
+        //     .then(data => cities.push(...data));
+
+
+        // can console.log cities will get array
+        let cities = null;
+        fetch(endpoint)
+            .then(blob => blob.json())
+            .then(data => (cities = data));
+
+
+        function changeHandler() {
+            console.log(123);
+        }
+
+        document
+            .querySelector('.serach')
+            .addEvenetListenter("change", changeHandler)
+            .addEvenetListenter("keyup", changeHandler);
+    </script>
+
+
+
+
+</body>
+
+</html>

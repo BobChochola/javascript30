@@ -5,6 +5,21 @@
 
 推薦flex學習小遊戲: flexboxfroggy ![] (https://flexboxfroggy.com/)
 
+```css
+display{
+    justify-content: 左右橫移;
+    align-items: 上下;
+    flex-direction: row, column 平移, 垂直 ;
+    flex-direction: row-reverse; 平移的鏡向;  (並不會 垂直不會也鏡像)
+    flex-direction: column-reverse; 垂直的鏡向;  (並不會 平移不會也鏡像)
+
+    
+}
+```
+[`-reverse`: 鏡像最後一個item為軸]
+[`當reverse後` 軸的起始點會改變, start -> end, end -> start]
+
+
 level 1
 ```css
 justify-content: flex-end
