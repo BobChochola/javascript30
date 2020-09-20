@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Bobstyle.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <form action="" class="secach-form">
-        <input type="text" class="serach" placeholder="City or State">
-        <ul class="suggestclass">
+    <form class="search-form">
+        <input type="text" class="search" placeholder="City or State">
+        <ul class="suggestions">
             <li>Filter for a city</li>
             <li>or a state</li>
         </ul>
@@ -21,12 +22,66 @@
     <script>
         const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
-        function requestHandler() {
-            consloe.log(JSON.parse(this.response));
-        }
+        // function requestHandler() {
+        //     consloe.log(JSON.parse(this.response));
+        // }
 
 
         let req = new XMLHttpRequest();
+
+        // can console.log cities will get array
+        let cities = null;
+        fetch(endpoint)
+            .then(blob => blob.json())
+            .then(data => (cities = data));
+
+
+        function findMatches(wordTOMatch, cities) {
+            return cities.filter(place => {
+                const regex = new RegExp(wordTOMatch, "gi");
+                return place.city.match(regex) || place.state.match(regex);
+            });
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+
+        function inputHandler() {
+            const matchArray = findMatches(this.value, cities);
+            const html = matchArray
+                .map(place => {
+                    const regex = new RegExp(this.value, "gi");
+                    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+                    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+                    return `
+                <li>
+                    <span class="name">${cityName}, ${stateName}</span>
+                    <span class="population">${numberWithCommas(place.population)}</span>
+                </li>
+                `;
+                }).join('');
+            suggestions.innerHTML = html;
+        };
+
+        const suggestions = document.querySelector(".suggestions")
+        document.querySelector(".search").addEventListener("keyup", inputHandler);
+
+
+
+        // document.querySelector("")
+
+        // function changeHandler() {
+        //     console.log(123);
+        // }
+
+        // document
+        //     .querySelector('.search')
+        //     .addEvenetListenter("change", changeHandler)
+        //     .addEvenetListenter("keyup", changeHandler);
+
+
 
         // req.addEvenetListenter = ('load', requestHandler);
         // req.open("get", endpoint);
@@ -41,23 +96,6 @@
         // fetch(endpoint)
         //     .then(blob => blob.json())
         //     .then(data => cities.push(...data));
-
-
-        // can console.log cities will get array
-        let cities = null;
-        fetch(endpoint)
-            .then(blob => blob.json())
-            .then(data => (cities = data));
-
-
-        function changeHandler() {
-            console.log(123);
-        }
-
-        document
-            .querySelector('.serach')
-            .addEvenetListenter("change", changeHandler)
-            .addEvenetListenter("keyup", changeHandler);
     </script>
 
 
