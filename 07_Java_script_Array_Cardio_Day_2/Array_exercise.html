@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cart = [{
+            id: 1,
+            count: 1
+        }, {
+            id: 2,
+            count: 1
+        }, {
+            id: 3,
+            count: 1
+        }, {
+            id: 4,
+            count: 1
+        }, ];
+        // console.log(cart)
+
+        // update count 
+        // let item = cart.find(function(item) {
+        //     console.log(item.id)
+        //     return item.id === 3;
+        // })
+        // item.count === 5;
+        // console.log(cart)
+
+        //Arrow function
+        // const item = cart.find(item => {
+        //     console.log(item.id);
+        //     return item.id === 3;
+        // });
+        // item.count = 5;
+        // console.log(cart);
+
+        // let newCart = [...cart]
+        // newCart[0].count = 5;
+        // console.log(cart[0], newCart[0]);
+
+        let obj_1 = {
+            count: 1
+        };
+        let obj_2 = obj_1;
+        let obj_3 = Object.assign({}, obj_2);
+
+        obj_1.count = 5;
+        let obj_4 = JSON.parse(JSON.stringify(obj_2));
+        console.log(obj_1);
+        console.log(obj_2);
+        console.log(obj_3);
+        console.log(obj_4);
+        console.log(obj_1.count + obj_2.count + obj_3.count + obj_4.count);
+
+        let array = [{
+            neme: 'bob'
+        }, {
+            neme: 'connie'
+        }];
+        let ary1 = JSON.parse(JSON.stringify(array));
+
+        let ary2 = array.map((item) => {
+            return Object.assign({}, item)
+        })
+        console.log(array[0] === ary1[0]);
+    </script>
+
+
+
+</body>
+
+</html>

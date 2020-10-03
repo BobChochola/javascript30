@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Cardio 💪💪</title>
+</head>
+
+<body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+
+    <script>
+        const people = [{
+            name: 'Wes',
+            year: 1988
+        }, {
+            name: 'Kait',
+            year: 1986
+        }, {
+            name: 'Irv',
+            year: 1970
+        }, {
+            name: 'Lux',
+            year: 2015
+        }, ];
+
+        const comments = [{
+            text: 'Love this!',
+            id: 523423
+        }, {
+            text: 'Super good',
+            id: 823423
+        }, {
+            text: 'You are the best',
+            id: 2039842
+        }, {
+            text: 'Ramen is my fav food ever',
+            id: 123523
+        }, {
+            text: 'Nice Nice Nice!',
+            id: 542328
+        }];
+
+        // Some and Every Checks
+        // Array.prototype.some() // is at least one person 19 or older?
+
+        //this function can test loop run 4 times, besause function include return console.log()
+        let ans_1 = people.some(function(preson) {
+            return new Date().getUTCFullYear() - preson.year >= 19;
+            // return console.log('try')
+        });
+        console.log(ans_1)
+
+        //arrow function
+        const Arrow_ans = people.some(preson => {
+            return new Date().getUTCFullYear() - preson.year >= 19;
+        });
+        console.log(Arrow_ans);
+
+
+        // Array.prototype.every() // is everyone 19 or older?
+        let ans_2 = people.every(function(preson) {
+            return new Date().getUTCFullYear - preson.year >= 19
+        })
+        console.log(ans_2);
+
+        //arrow function
+        const Arrow_ans_2 = people.every(preson => {
+            return new Date().getUTCFullYear - preson.year >= 19
+        })
+        console.log(Arrow_ans_2);
+
+        // Array.prototype.find()
+        // Find is like filter, but instead returns just the one you are looking for
+        // find the comment with the ID of 823423
+
+        let ans_3 = comments.find(function(comment) {
+            return comment.id === 823423
+        });
+        console.log(ans_3)
+
+        //arrow function
+        const Arrow_ans_3 = comments.find(comment => comment.id === 823423);
+        console.log(Arrow_ans_3);
+
+        // Array.prototype.findIndex()
+        // Find the comment with this ID
+        let ans_4 = comments.findIndex(function(comment) {
+            return comment.id === 823423
+        })
+        console.log(ans_4)
+
+        //arrow function
+        const Arrow_ans_4 = comments.findIndex(comment => comment.id === 823423);
+        console.log(Arrow_ans_4);
+        // delete the comment with the ID of 823423
+
+        // // slice, splice
+        // const ans_5 = comments.splice(ans_4, 1);
+        // console.log(comments)
+
+        const ans_6 = comments.slice(0, ans_4);
+        const ans_7 = comments.slice(ans_4 + 1);
+
+        const ans_8 = [
+            ...ans_6,
+            ...ans_7,
+        ]
+        console.log(ans_6, ans_7, comments);
+        console.log(ans_8, comments)
+    </script>
+
+</body>
+
+</html>
