@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="draw" width="800" height="800"></canvas>
+
+    <script>
+        let canvas = document.querySelector('#draw');
+        let ctx = canvas.getContext('2d');
+        let colorDeg = 0;
+        let direction = true;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.strokeStyle = '#BADA55';
+        ctx.lineWidth = 0;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+
+        let drawing = false;
+        let x = 0,
+            y = 0;
+        canvas.addEventListener('mousedown', e => {
+            drawing = true;
+            [x, y] = [e.offsetX, e.offsetY]
+        });
+        canvas.addEventListener('mousemove', e => {
+            if (!drawing) return;
+
+            ctx.beginPath();
+            // colorDeg = colorDeg < 360 ? colorDeg + 1 : 0;
+            // console.log(colorDeg)
+            colorDeg++;
+            if (colorDeg >= 360) {
+                colorDeg = 0;
+                console.log(colorDeg);
+            }
+            if (ctx.lineWidth >= 50 || ctx.lineWidth <= 1) {
+                direction = !direction
+            }
+
+            if (direction) {
+                ctx.lineWidth++;
+            } else {
+                ctx.lineWidth--;
+            }
+
+
+
+
+
+            ctx.strokeStyle = `hsl(${colorDeg}, 100%, 50%)`;
+            ctx.moveTo(e.offsetX, e.offsetY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            [x, y] = [e.offsetY, e.offsetX];
+            ctx.stroke();
+        });
+        canvas.addEventListener('mouseup', () => {
+            drawing = false;
+        });
+        canvas.addEventListener('mouseleave', () => {
+            drawing = false;
+        });
+        // canvas.addEventListener('mouseout', () => {
+
+        // });
+    </script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+        
+        canvas {
+            border: 1px solid;
+        }
+    </style>
+</body>
+
+</html>
