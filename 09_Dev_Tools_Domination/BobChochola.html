@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Console Tricks!</title>
+</head>
+
+<body>
+
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+        const dogs = [{
+            name: 'Snickers',
+            age: 2
+        }, {
+            name: 'hugo',
+            age: 8
+        }];
+
+        function makeGreen() {
+            const p = document.querySelector('p');
+            p.style.color = '#BADA55';
+            p.style.fontSize = '50px';
+        }
+
+        let sonsole = {
+            isDev: true,
+            log(...args) {
+                if (!isDev) return;
+                window.console.log(...args);
+                window.console.log("%c住手", "font-size: 60px, color: red;");
+            },
+
+            warn(...args) {
+                if (!isDev) return
+                window.console.warn(...args);
+            },
+            info(...args) {
+                if (!isDev) return
+                window.console.warn(...args);
+            },
+            assert(...args) {
+                if (!isDev) return
+                window.console.assert(...args);
+            },
+            dir(...args) {
+                if (!isDev) return
+                window.console.dir(...args);
+            },
+            table(...args) {
+                if (!isDev) return
+                windown.console.table(...args);
+            },
+            count(...args) {
+                if (!isDev) return
+                window.console.count(...args)
+            },
+            time(...args) {
+                if (!isDev) return
+                window.console.time(...args)
+            },
+        }
+
+        let name = "BOB"
+
+        // Regular
+        console.log('123', '456');
+        // Interpolated
+        console.log("My name is %s !!!", "BOB");
+        console.log("I have %f dollars!!!", 3.45);
+        console.log("I have %d dollars!!!", 3.45);
+
+        // ES6 Interpolated string
+        console.log(`My name is ${name} !!!`);
+        // ---------------------------------------------------------------------
+
+        // Styled
+
+        // warning!
+        console.warn("警告");
+
+        // Error :|
+        console.error("錯誤");
+        // Info
+        console.info("??");
+        // Testing
+
+        console.assert(false, "訊息");
+        console.assert("", "訊息");
+        console.assert(0, "訊息");
+        console.assert(null, "訊息");
+        console.assert(NaN, "訊息");
+        console.assert(undefined, "訊息");
+
+        // clearing
+        // CTRL + L
+
+        // Viewing DOM Elements
+        let p = document.querySelector('p');
+        console.log(p);
+        console.log(dogs);
+
+        console.dir(p);
+        console.dir(dogs);
+        // Grouping together
+        console.table(dogs);
+        console.table(dogs, "name");
+
+        // counting
+
+        console.count('Wes');
+        console.count('Wes');
+        console.count('Steve');
+        console.count('Steve');
+        console.count('Wes');
+        console.count('Steve');
+        console.count('Wes');
+        console.count('Steve');
+        console.count('Steve');
+        console.count('Steve');
+        console.count('Steve');
+        console.count('Steve');
+
+        // timing
+        console.time("test1");
+        let i;
+        let j;
+        for (i = 1; i < 10000000; i++) {
+            let j = i;
+        }
+        console.timeEnd("test1");
+
+        console.time("test2");
+        for (let i = 1; i < 10000000; i++) {
+            let j = i;
+        }
+        console.timeEnd("test2");
+    </script>
+</body>
+
+</html>
