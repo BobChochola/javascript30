@@ -1,0 +1,38 @@
+html {
+    font-family: sans-serif;
+    background-color: #74634e;
+}
+
+.inbox {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: rgb(197, 167, 101);
+    border-radius: 5px;
+    box-shadow: 20px 12px 20px 10px rgba(0, 0, 255, .2);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin: 20px;
+}
+
+input:checked+p {
+    background: #eff3f0;
+    text-decoration: line-through;
+}
+
+p {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'helvetica neue';
+    transition: background 0.2s;
+    flex: 1;
+    font-weight: 200;
+    border-left: 1px solid #D1E2FF;
+}

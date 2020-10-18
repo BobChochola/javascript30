@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="BobChochola_style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>This is an inbox layout</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check one item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Hold down your Shidt key</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check a lower item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Everything in between should also bo set to checked</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Try do it without any libraries</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Just regular JavaScript</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Good Luck!</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Don't forget to tweet your result!</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const checkboxes = Array.from(
+                document.querySelectorAll('.inbox input[type="checkbox"]')
+            );
+
+            let lastCheck = null;
+
+
+            function clickHandler(e) {
+                console.log(e);
+                if (this.checked) {
+                    if (e.shiftKey && lastCheck !== null) {
+                        let nowCheck = checkboxes.indexOf(this);
+                        checkboxes.slice(
+                                Math.min(nowCheck, lastCheck),
+                                Math.max(nowCheck, lastCheck)
+                            )
+                            .forEach(input => (input.checked = true));
+                    }
+                    lastCheck = checkboxes.indexOf(this);
+                } else {
+                    lastCheck = null;
+                }
+            }
+
+            checkboxes.forEach((input) => {
+                input.addEventListener("click", clickHandler)
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
