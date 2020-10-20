@@ -37,19 +37,30 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
-/* Hook up the event listners */
-video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
-video.addEventListener('timeupdate', handleProgress);
+function fullScreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
 
-toggle.addEventListener('click', togglePlay);
-skipButtons.forEach(button => button.addEventListener('click', skip));
-ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
-ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
 
-let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+        /* Hook up the event listners */
+        video.addEventListener('click', togglePlay);
+        video.addEventListener('play', updateButton);
+        video.addEventListener('pause', updateButton);
+        video.addEventListener('timeupdate', handleProgress);
+
+        toggle.addEventListener('click', togglePlay);
+        skipButtons.forEach(button => button.addEventListener('click', skip));
+        ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+        ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+
+        let mousedown = false;
+        progress.addEventListener('click', scrub);
+        progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+        progress.addEventListener('mousedown', () => mousedown = true);
+        progress.addEventListener('mouseup', () => mousedown = false);
