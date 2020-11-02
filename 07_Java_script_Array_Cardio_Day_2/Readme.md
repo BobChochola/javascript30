@@ -1,9 +1,8 @@
 # 07 - Array Cardio Day 2
->首次上傳：2017/05/23
+>首次上傳：2020/10/03
 
 ## **主題**
 延續[[04 - Array Cardio Day 1]
-[[DEMO]](https://guahsu.io/JavaScript30/07_Array-Cardio-Day-2/index-GuaHsu.html) 
 
 ## **步驟**
 #### 練習範例內有提供了2組資料：

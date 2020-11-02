@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let obj = {
+            test: function() {
+                console.log(123);
+            }
+        };
+
+        let fun1 = function() {
+            console.log(1);
+        };
+
+        Function.prototype.clone = function() {
+            var fct = this;
+            var clone = function() {
+                return fct.apply(this, arguments);
+            };
+            clone.prototype = fct.prototype;
+            for (property in fct) {
+                if (fct.hasOwnProperty(property) && property !== "prototype") {
+                    clone[property] = fct[property];
+                }
+            }
+            return clone;
+        }
+
+        let fun2 = fun1.clone();
+
+        //colsed create
+        function counter(start) {
+            let count = start
+            return function get() {
+                console.log(++count);
+            };
+        }
+
+        let c1 = counter(0)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Reference VS Copy</title>
+</head>
+
+<body>
+
+    <script>
+        //首先我們從字串、數字、布林開始
+        // start with strings, numbers and booleans
+
+        let a = 'A'
+        let b = a
+        a = 'B'
+
+        console.log(a, b) // B,A
+
+        let c = 0
+        let d = c++
+            console.log(c, d) // 1,0
+
+        let e = true
+        let f = e
+        e != f
+        console.log(e, f) // false, true
+
+        let g = "A"
+        let h = "A"
+        let i = "A"
+        h = "B", i = "C", g += h, g += i;
+        console.log(g, h, i)
+
+        //來來來看看陣列吧
+        // Let's say we have an array
+        const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+        //複製～
+        // and we want to make a copy of it.
+
+        // You might think we can just do something like this:
+
+        let players2 = players
+
+        //然而當我們更新陣列的時候呢？
+        // however what happens when we update that array?
+
+        let players2[1] = 'Bob'
+
+        // now here is the problem!
+        console.log(players, players2); //as same
+
+        //哦不～～我們改到那個陣列了
+        // oh no - we have edited the original array too!
+
+        //為什麼？ 因為這不是複製，他們都對應到一樣的陣列
+        // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+        //所以，我們要怎麼修改？
+        // So, how do we fix this? We take a copy instead!
+
+        // one way
+
+        let players2 = players.slice()
+        let players2 = [].concat(players)
+        let players = [...players]
+        players2[0] = 'Bob'
+        console.log(players, players2)
+
+        function cteateObj(name) {
+            return {
+                name
+            };
+        }
+
+        let p1 = createObj("Bob")
+        let p2 = creteObj("Grace")
+        let p3 = createObj("Elva")
+        let p4 = createObj("Kevin")
+
+        let f1 = [p1, p2, p3, p4]
+        let f2 = f1.slice();
+        // let f2 = [].concat(f1);
+        // let f2 = [...f1];
+
+        // f2[0].name = "alexander";
+
+        f2[0] = {
+            name: "alexander"
+        }
+
+        console.log(f1[0].name)
+
+        // 可以使用slice, concat, ES6解構
+        // or create a new array and concat the old one in
+        // or use the new ES6 Spread
+
+        // 當我們更新時，原始的不會改變
+        // now when we update it, the original one isn't changed
+
+        //處理物件也是依樣的觀念
+        // The same thing goes for objects, let's say we have a person object
+
+        let person = {
+            name: "Was Bos",
+            age: 80
+        };
+
+        // with Objects
+
+        // and think we make a copy:
+
+        let p2 = person;
+
+        //case1
+        person = "XXX";
+        console.log(person, p2)
+            //case2
+        person.name = "XXX";
+        console.log(person, p2)
+
+        // how do we take a copy instead?
+
+        let a = {
+            name: "Bob",
+            age: 24
+        };
+        let b = {
+            name: "Bbb",
+        };
+
+        let c = Object.assign(a, b);
+
+        console.log(c);
+
+        let qq = JSON.parse(JSON.stringify(a));
+
+
+        // We will hopefully soon see the object ...spread
+
+        // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+
+        const bob = {
+            name: "Bob",
+            age: 24,
+            social: {
+                twitter: "@Bobchochola",
+                facebook: "Bob.developer",
+            }
+        }
+
+        let bob2 = Object.assign({}, bob);
+
+        // bob2.social = null; // bob.social = {twitter, fb}
+        // bob2.social.facebook = null // bob.social = {twitter, null}
+
+        let bob3 = JSON.parse(JSON.stringify(bob));
+    </script>
+
+</body>
+
+</html>

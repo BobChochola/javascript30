@@ -1,7 +1,5 @@
 # **05 - Flex Panel Gallery**
->首次上傳：2017/05/20  
-
-![](https://guahsu.io/2017/05/JavaScript30-05-Flex-Panel-Gallery/demo5.png)
+>首次上傳：2020/09/13
 
 推薦flex學習小遊戲: flexboxfroggy ![] (https://flexboxfroggy.com/)
 
