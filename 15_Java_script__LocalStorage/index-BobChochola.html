@@ -62,8 +62,14 @@
             createList(items, itemsList); //更新畫面
         }
 
-        function toggleItem() {
-
+        function toggleItem(e) {
+            console.log(e.currentTarget, e.Target)
+                //避免重複觸發，判斷是input才處理
+            if (e.target.matches("input")) return; //skip this unless it's an input
+            let index = e.target.dataset["input"];
+            items[index].done = !items[index].done; // 更新js資料 // items[index].done = true
+            localStorage.setItem("items", JSON.stringify(items)); // update js data
+            createList(items, itemsList); // updata screen
         }
 
         addItem.addEventLitener("submit", addItems);
