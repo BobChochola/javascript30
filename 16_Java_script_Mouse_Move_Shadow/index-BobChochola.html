@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hero">
+        <h1 contenteditable>🔥WOAH!</h1>
+    </div>
+
+    <style>
+        html {
+            color: black;
+            font-family: sans-serif;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        
+        h1 {
+            text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+            font-size: 100px;
+        }
+    </style>
+
+    <script>
+        (function() {
+
+            let lenght = 100;
+            let text = document.querySelector("h1");
+
+            document.querySelector('.hero')
+                .addEventListener("mousemove", function(e) {
+                    // plan A old school
+                    // let x = e.offsetX
+                    // let y = e,
+                    //     offsetX
+                    // plan B new school
+                    let {
+                        offsetX,
+                        offsetY
+                    } = e;
+                    // plan C newnew school
+                    // let {
+                    //     offsetX: x,
+                    //     offsetY: y
+                    // } = e;
+
+                    if (e.target !== this) {
+                        offsetX += e.target.offsetLeft;
+                        offsetY += e.target.offsetTop;
+                    }
+
+                    let lengthX = Math.floor((offsetX / this.offsetWidth) * lenght) * 2 - lenght;
+                    let lengthY = Math.floor((offsetY / this.offsetHeight) * lenght) * 2 - lenght;
+
+                    text.style.textShadow = `
+                    ${lengthX*-0.3}px ${lengthY*-0.3}px 5px rgba(255,0,0,0.8),
+                    ${lengthX*-0.6}px ${lengthY*-0.6}px 5px rgba(0,255,0,0.8),
+                    ${lengthX*-1}px ${lengthY*-1}px 5px rgba(0,0,255,0.8)
+                    `
+                });
+        })();
+    </script>
+
+</body>
+
+</html>
