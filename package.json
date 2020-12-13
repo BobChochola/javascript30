@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BobChochola/javascript30/issues"
   },
-  "homepage": "https://github.com/BobChochola/javascript30#readme"
+  "homepage": "https://github.com/BobChochola/javascript30#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.13"
+  }
 }
