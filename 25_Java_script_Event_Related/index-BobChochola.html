@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        div {
+            width: 100%;
+            padding: 100px;
+        }
+        
+        .one {
+            background: thistle;
+        }
+        
+        .two {
+            background: mistyrose;
+        }
+        
+        .three {
+            background: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <button>button</button>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li><a href="#">Button1</a></li>
+        <li><a href="#">Button2</a></li>
+        <li><a href="#">Button3</a></li>
+    </ul>
+
+    <script>
+        let button = document.querySelector("Button");
+        button.addEventListener("click", buttonHandler, {
+
+        }, {
+            capture: false,
+            once: false
+        })
+
+        function buttonHandler() {
+            console.log("Button Click");
+        }
+
+        let divs = document.querySelectorAll("div");
+        divs.forEach(dom => {
+            dom.addEventListener("click", divHandler, {
+                capture: false
+            });
+        })
+
+        function divHandler(e) {
+            e.stopPropagation();
+            console.log(e.path)
+            console.log(this.className)
+        }
+
+        let as = document.querySelectorAll("a");
+        as.forEach(dom => {
+            dom.addEventListener("click", divHandler, {
+                capture: false,
+                passive: false,
+            });
+        })
+
+        function divHandler(e) {
+            e.preventDefault()
+                // console.log(e.path)
+            console.log("Binding A click:", this)
+        }
+
+        let ul = document.querySelector('ul');
+        ul.addEventListener("click", ulHandler);
+
+        function ulHandler(e) {
+            if (e.target.nodeName === "A") {
+                e.preventDefault()
+
+                console.log('Delegate A click:', e.target);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
