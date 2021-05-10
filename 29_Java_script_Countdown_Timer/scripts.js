@@ -14,8 +14,10 @@
         timer = setInterval(function() {
             const secLeft = Math.floor((end - Date.now()) / 1000);
             if (secLeft >= 0) {
-                const displaymin = Math.floor(secLeft / 60);
-                const displaysec = secLeft % 60;
+                let displaymin = Math.floor(secLeft / 60);
+                let displaysec = secLeft % 60;
+                displaysec = displaysec < 10 ? "0" + displaysec : displaysec;
+                console.log(displaysec)
                 timeLeft.innerText = `${displaymin}:${displaysec}`;
             } else {
                 clearInterval(timer);
